@@ -1,0 +1,54 @@
+version: '3.7'
+
+services:
+    satosa:
+        image: mwatelescope/orcid_gateway:1
+        volumes:
+            - /srv/docker/opt/satosa/orcid-saml-gateway-sp-metadata.xml:/opt/satosa/orcid-saml-gateway-sp-metadata.xml
+        environment:
+            - OIDC_CLIENT_ID_FILE=/var/run/secrets/oidc_client_id 
+            - OIDC_CLIENT_SECRET_FILE=/var/run/secrets/oidc_client_secret
+            - SATOSA_PROXY_BASE=https://samlgw01.mwatelescope.org
+            - SATOSA_SAML_FRONTEND_ATTRIBUTE_SCOPE=samlgw01.mwatelescope.org
+            - SATOSA_SAML_FRONTEND_CERT_FILE=/var/run/secrets/satosa_saml_frontend_cert
+            - SATOSA_SAML_FRONTEND_KEY_FILE=/var/run/secrets/satosa_saml_frontend_privkey
+            - SATOSA_SAML_FRONTEND_ENTITYID=https://samlgw01.mwatelescope.org/idp
+            - SATOSA_SAML_FRONTEND_METADATA_FILE=/opt/satosa/orcid-saml-gateway-sp-metadata.xml
+            - SATOSA_STATE_ENCRYPTION_KEY_FILE=/var/run/secrets/satosa_state_encryption_key
+        secrets:
+            - oidc_client_id 
+            - oidc_client_secret
+            - satosa_saml_frontend_cert
+            - satosa_saml_frontend_privkey
+            - satosa_state_encryption_key
+        networks:
+            - default
+        deploy:
+            replicas: 1
+
+    nginx:
+        image: nginx:1.17.6
+        volumes:
+            - /srv/docker/etc/nginx/nginx.conf:/etc/nginx/nginx.conf
+            - /srv/docker/etc/nginx/https.crt:/etc/nginx/https.crt
+            - /srv/docker/etc/nginx/https.key:/etc/nginx/https.key
+            - /srv/docker/etc/nginx/dhparam.pem:/etc/nginx/dhparam.pem
+        networks:
+            - default
+        ports:
+            - "80:80"
+            - "443:443"
+        deploy:
+            replicas: 1
+
+secrets:
+    oidc_client_id:
+        external: true
+    oidc_client_secret:
+        external: true
+    satosa_saml_frontend_cert:
+        external: true
+    satosa_saml_frontend_privkey:
+        external: true
+    satosa_state_encryption_key:
+        external: true

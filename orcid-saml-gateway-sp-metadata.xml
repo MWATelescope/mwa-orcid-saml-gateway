@@ -1,0 +1,100 @@
+<md:EntityDescriptor
+        xmlns:idpdisc="urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol"
+        xmlns:remd="http://refeds.org/metadata"
+        xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
+        xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+        xmlns:mdattr="urn:oasis:names:tc:SAML:metadata:attribute"
+        xmlns:mdrpi="urn:oasis:names:tc:SAML:metadata:rpi"
+        xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui"
+        xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"
+        xmlns:xrd="http://docs.oasis-open.org/ns/xri/xrd-1.0"
+        entityID="https://proxy.mwatelescope.org/sp">
+  <md:SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+    <md:Extensions>
+      <mdui:UIInfo>
+        <mdui:DisplayName xml:lang="en">MWA Telescope Collaboration Proxy</mdui:DisplayName>
+        <mdui:Description xml:lang="en">The MWA Telescope Collaboration Proxy service provider is a SAML proxy enabling federation between eduGAIN identity servers and service providers that support collaboration services for the Murchison Widefield Array Telescope project.</mdui:Description>
+        <mdui:InformationURL xml:lang="en">https://proxy.mwatelescope.org/sp_info.html</mdui:InformationURL>
+      </mdui:UIInfo>
+      <idpdisc:DiscoveryResponse index="0" isDefault="true" Binding="urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol" Location="https://proxy.mwatelescope.org/Saml2/disco"/>
+    </md:Extensions>
+    <md:KeyDescriptor use="signing">
+      <ds:KeyInfo>
+        <ds:X509Data>
+          <ds:X509SubjectName>CN=proxy.mwatelescope.org</ds:X509SubjectName>
+          <ds:X509Certificate>MIIELDCCApSgAwIBAgIJAOD8zeBqpypbMA0GCSqGSIb3DQEBCwUAMCExHzAdBgNV
+BAMTFnByb3h5Lm13YXRlbGVzY29wZS5vcmcwHhcNMTcwOTEwMTcyNjQ3WhcNMjcw
+OTA4MTcyNjQ3WjAhMR8wHQYDVQQDExZwcm94eS5td2F0ZWxlc2NvcGUub3JnMIIB
+ojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEAokaGH9PlufdGz3yq+FDelKlJ
+4ZXqj23HjmF5awxMFWxMHooLXQwTuW6GghmN2cjRDacZymL3qkxZAzk+H3dKEgVT
+l5kToeE4YAmmjiniwDqwViu710jFoYoSCcgAZfCYN40t+YrQFM0gdcUdXJAfRGJQ
+M2ABDOdJ8bzniEM1UjOJWZmYtbSY0sxpgQ1fuDbu4CT7UHYbnr8j2/bQl8Ov/3rl
+SNHJKjIq5Eif7qNxtqozsWYMzVH0SH/R7EN3kvB21rhipYA6veU/u5jE+A7k8PHJ
+yiveqq5hrH1lX0A9IobijvP8FyaMpnbycT8jWs4VrCBDcDV3GCD3KY8Q1RuLfZ90
+KQRakgf767uR2GCBX2cxfS6Pc+uxzsH3x0Jy6H2wPukwbrRshXViI6/Ma8WjN2vL
+SEFJ5BcZr9ruNxTbg/0LQYzric3o/ncUPiYgMIFl3QoxQdEvkf6BoMnJuw7PuJY/
+etaOlsrE+Nzj6u/fA6wqfk5D6fFIhnCYfyb6SqxjAgMBAAGjZzBlMEQGA1UdEQQ9
+MDuCFnByb3h5Lm13YXRlbGVzY29wZS5vcmeGIWh0dHBzOi8vcHJveHkubXdhdGVs
+ZXNjb3BlLm9yZy9zcDAdBgNVHQ4EFgQUxs55E0AYxWaYrEw9faQgbOCCOmAwDQYJ
+KoZIhvcNAQELBQADggGBAD8z7/87STuNk2mVhz4DuwPeCH+23B3PlrKzEvcLBcCw
+mT6Hdea0AqWpVL+r5tj1xAn2c3jWRFUGXrW5joM59gHLS93hpLI2+izt3wCsMmys
+eWnlCZV02sbeedkhBvi2b2L24IZ6FB5MVnh7ExanOsWgDr8TsVew0kkeSz9jBIcm
+o3QOraHFktbrnUQrMo436I1N1vn9zGvWiPqUGeK6p3lwuz9CHlITv+YpUEJPr2Ea
+1wyRrWotcSEwbDKNsrB6qJpZgOvKt5116cLYEdm8QuXn3JwhtZ2SslFN5QmmOQbO
+D29RJMKIzKWhc9HhXSXpe5EgckxzBWhvpu0utzWZemxEOvm+74dqrRjR6TwpHcXn
+8enqqe0dgK0QR8kgeFW3iHZRFNpIK+0c8udFqJ3so4kbjrdbjEcVeyAiZyO1YIfi
+Do82vVmvU5aTgexfoFXWJBSWVrXwUbI1v62ZTod6H/6FhuSF9TZRmLa9l17j43Wz
+T17P+Ir8V1ro0WFo2kHipA==</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:KeyDescriptor use="encryption">
+      <ds:KeyInfo>
+        <ds:X509Data>
+          <ds:X509SubjectName>CN=proxy.mwatelescope.org</ds:X509SubjectName>
+          <ds:X509Certificate>MIIELDCCApSgAwIBAgIJAOD8zeBqpypbMA0GCSqGSIb3DQEBCwUAMCExHzAdBgNV
+BAMTFnByb3h5Lm13YXRlbGVzY29wZS5vcmcwHhcNMTcwOTEwMTcyNjQ3WhcNMjcw
+OTA4MTcyNjQ3WjAhMR8wHQYDVQQDExZwcm94eS5td2F0ZWxlc2NvcGUub3JnMIIB
+ojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEAokaGH9PlufdGz3yq+FDelKlJ
+4ZXqj23HjmF5awxMFWxMHooLXQwTuW6GghmN2cjRDacZymL3qkxZAzk+H3dKEgVT
+l5kToeE4YAmmjiniwDqwViu710jFoYoSCcgAZfCYN40t+YrQFM0gdcUdXJAfRGJQ
+M2ABDOdJ8bzniEM1UjOJWZmYtbSY0sxpgQ1fuDbu4CT7UHYbnr8j2/bQl8Ov/3rl
+SNHJKjIq5Eif7qNxtqozsWYMzVH0SH/R7EN3kvB21rhipYA6veU/u5jE+A7k8PHJ
+yiveqq5hrH1lX0A9IobijvP8FyaMpnbycT8jWs4VrCBDcDV3GCD3KY8Q1RuLfZ90
+KQRakgf767uR2GCBX2cxfS6Pc+uxzsH3x0Jy6H2wPukwbrRshXViI6/Ma8WjN2vL
+SEFJ5BcZr9ruNxTbg/0LQYzric3o/ncUPiYgMIFl3QoxQdEvkf6BoMnJuw7PuJY/
+etaOlsrE+Nzj6u/fA6wqfk5D6fFIhnCYfyb6SqxjAgMBAAGjZzBlMEQGA1UdEQQ9
+MDuCFnByb3h5Lm13YXRlbGVzY29wZS5vcmeGIWh0dHBzOi8vcHJveHkubXdhdGVs
+ZXNjb3BlLm9yZy9zcDAdBgNVHQ4EFgQUxs55E0AYxWaYrEw9faQgbOCCOmAwDQYJ
+KoZIhvcNAQELBQADggGBAD8z7/87STuNk2mVhz4DuwPeCH+23B3PlrKzEvcLBcCw
+mT6Hdea0AqWpVL+r5tj1xAn2c3jWRFUGXrW5joM59gHLS93hpLI2+izt3wCsMmys
+eWnlCZV02sbeedkhBvi2b2L24IZ6FB5MVnh7ExanOsWgDr8TsVew0kkeSz9jBIcm
+o3QOraHFktbrnUQrMo436I1N1vn9zGvWiPqUGeK6p3lwuz9CHlITv+YpUEJPr2Ea
+1wyRrWotcSEwbDKNsrB6qJpZgOvKt5116cLYEdm8QuXn3JwhtZ2SslFN5QmmOQbO
+D29RJMKIzKWhc9HhXSXpe5EgckxzBWhvpu0utzWZemxEOvm+74dqrRjR6TwpHcXn
+8enqqe0dgK0QR8kgeFW3iHZRFNpIK+0c8udFqJ3so4kbjrdbjEcVeyAiZyO1YIfi
+Do82vVmvU5aTgexfoFXWJBSWVrXwUbI1v62ZTod6H/6FhuSF9TZRmLa9l17j43Wz
+T17P+Ir8V1ro0WFo2kHipA==</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:AssertionConsumerService index="1" isDefault="true" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://proxy.mwatelescope.org/Saml2/acs/post"/>
+  </md:SPSSODescriptor>
+  <md:Organization>
+    <md:OrganizationName xml:lang="en">curtin.edu.au</md:OrganizationName>
+    <md:OrganizationDisplayName xml:lang="en">Curtin University</md:OrganizationDisplayName>
+    <md:OrganizationURL xml:lang="en">http://curtin.edu.au</md:OrganizationURL>
+  </md:Organization>
+  <md:ContactPerson contactType="technical">
+    <md:Company>Curtin University</md:Company>
+    <md:GivenName>Greg</md:GivenName>
+    <md:SurName>Sleap</md:SurName>
+    <md:EmailAddress>mailto:greg.sleap@curtin.edu.au</md:EmailAddress>
+  </md:ContactPerson>
+  <md:ContactPerson contactType="other" remd:contactType="http://refeds.org/metadata/contactType/security">
+    <md:Company>Curtin University</md:Company>
+    <md:GivenName>Greg</md:GivenName>
+    <md:SurName>Sleap</md:SurName>
+    <md:EmailAddress>mailto:greg.sleap@curtin.edu.au</md:EmailAddress>
+  </md:ContactPerson>
+</md:EntityDescriptor>
