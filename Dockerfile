@@ -1,4 +1,4 @@
-FROM python:3.7.5-buster
+FROM python:3.7.7-buster
 
 ARG SATOSA_DIR=/opt/satosa
 ENV SATOSA_DIR ${SATOSA_DIR}
@@ -22,7 +22,7 @@ RUN useradd --home-dir ${SATOSA_DIR} --no-create-home --system ${SATOSA_USER} \
     && mkdir -p ${SATOSA_DIR}/attributemaps \
     && chown -R ${SATOSA_USER}:${SATOSA_GROUP} ${SATOSA_DIR}
 
-ARG SATOSA_SRC_URL=git+https://github.com/IdentityPython/SATOSA.git@22053f9f5928c4d04210f70a64b9f3300d2b200d
+ARG SATOSA_SRC_URL="satosa==6.1.0"
 ENV SATOSA_SRC_URL ${SATOSA_SRC_URL}
 LABEL satosa_src_url=${SATOSA_SRC_URL}
 

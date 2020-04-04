@@ -4,6 +4,9 @@ INTERNAL_ATTRIBUTES: internal_attributes.yaml
 
 COOKIE_STATE_NAME: SATOSA_ORCID_SAML_GATEWAY_STATE
 
+cookies_samesite_compat:
+    - ["SATOSA_ORCID_SAML_GATEWAY_STATE", "SATOSA_ORCID_SAML_GATEWAY_STATE_LEGACY"]
+
 BACKEND_MODULES:
   - plugins/orcid_backend.yaml
 
