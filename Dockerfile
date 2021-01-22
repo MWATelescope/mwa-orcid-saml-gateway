@@ -22,7 +22,7 @@ RUN useradd --home-dir ${SATOSA_DIR} --no-create-home --system ${SATOSA_USER} \
     && mkdir -p ${SATOSA_DIR}/attributemaps \
     && chown -R ${SATOSA_USER}:${SATOSA_GROUP} ${SATOSA_DIR}
 
-ARG SATOSA_SRC_URL="satosa==6.1.0"
+ARG SATOSA_SRC_URL="satosa==7.0.3"
 ENV SATOSA_SRC_URL ${SATOSA_SRC_URL}
 LABEL satosa_src_url=${SATOSA_SRC_URL}
 

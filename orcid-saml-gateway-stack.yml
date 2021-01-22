@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
     satosa:
-        image: mwatelescope/orcid_gateway:2
+        image: mwatelescope/orcid_gateway:3
         volumes:
             - /srv/docker/opt/satosa/orcid-saml-gateway-sp-metadata.xml:/opt/satosa/orcid-saml-gateway-sp-metadata.xml
         environment:
