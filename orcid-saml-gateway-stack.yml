@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
     satosa:
-        image: mwatelescope/orcid_gateway:3
+        image: mwatelescope/orcid_gateway:4
         volumes:
             - /srv/docker/opt/satosa/orcid-saml-gateway-sp-metadata.xml:/opt/satosa/orcid-saml-gateway-sp-metadata.xml
         environment:
@@ -27,7 +27,8 @@ services:
             replicas: 1
 
     nginx:
-        image: nginx:1.17.6
+        #image: nginx:1.17.6
+        image: nginx:1.21.4
         volumes:
             - /srv/docker/etc/nginx/nginx.conf:/etc/nginx/nginx.conf
             - /srv/docker/etc/nginx/https.crt:/etc/nginx/https.crt
